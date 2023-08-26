@@ -1,0 +1,30 @@
+{
+  "name": "organ-rebate-system",
+  "version": "1.0.0",
+  "description": "A simple organ rebate system to provide additional free organs based upon the customer's order by using rebate logic.",
+  "scripts": {
+    "start": "node dist/src/server.js",
+    "dev": "nodemon --ext ts,js,json --exec ts-node src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint --ext .ts,.js .",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier \"./**\" --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "@types/node": "^18.17.11",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "tslib": "^2.6.2"
+  },
+  "author": "Muhammad Ata <https://github.com/m-ata>",
+  "license": "ISC"
+}
