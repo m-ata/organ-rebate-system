@@ -14,7 +14,7 @@ export const parseCSVToJson = (csvData: string): OrganOrder[] => {
     const [organ, cash, price, bonus_ratio] = line.split(',');
 
     return {
-      organ,
+      organ: organ.trim(),
       cash: Number(cash),
       price: Number(price),
       bonusRatio: Number(bonus_ratio),

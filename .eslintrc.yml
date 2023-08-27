@@ -9,7 +9,6 @@ extends:
   ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'prettier']
 parserOptions:
   ecmaVersion: 2020
-  project: 'tsconfig.json'
   requireConfigFile: false
   sourceType: 'module'
 rules:
