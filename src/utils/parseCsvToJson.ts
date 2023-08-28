@@ -11,13 +11,13 @@ export const parseCSVToJson = (csvData: string): OrganOrder[] => {
   csvLines.shift(); // Remove the header line
 
   return csvLines.map((line: string) => {
-    const [organ, cash, price, bonus_ratio] = line.split(',');
+    const [organ, cash, price, bonus_ratio] = line.trim().split(',');
 
     return {
-      organ: organ.trim(),
-      cash: Number(cash),
-      price: Number(price),
-      bonusRatio: Number(bonus_ratio),
+      organ,
+      cash: parseInt(cash),
+      price: parseInt(price),
+      bonusRatio: parseInt(bonus_ratio),
     };
   });
 };
