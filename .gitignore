@@ -19,3 +19,6 @@ dist
 logs
 *.log
 npm-debug.log*
+
+# Test Coverage
+__tests__/coverage
