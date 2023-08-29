@@ -6,8 +6,10 @@ dotenv.config();
 
 const port = process.env.PORT;
 
-const server = http.createServer(async (req: IncomingMessage, res: ServerResponse) => {
-  await router(req, res);
-});
+const server = http.createServer(
+  async (req: IncomingMessage, res: ServerResponse) => {
+    await router(req, res);
+  },
+);
 
 server.listen(port, () => console.log(`Server is listening on ${port}`));

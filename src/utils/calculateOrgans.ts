@@ -6,7 +6,7 @@ import { generateOrder } from './generateOrder';
  *
  * @param order The organ order details
  * @returns The calculated organ order string
-*/
+ */
 export const calculateOrgans = (order: OrganOrder): string => {
   const { cash, price, organ } = order;
   const purchasedRatio = Math.floor(cash / price);
