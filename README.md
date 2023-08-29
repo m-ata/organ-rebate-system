@@ -47,11 +47,11 @@ Runs Jest tests and generates 100% coverage reports.
 
 ## Code Organization
 
-- Readability Focus: The project is structured to enhance code readability. Logic is divided into distinct segments such as routes, controllers, and utility functions, contributing to a clear and organized codebase.
-- Routing Mechanism: Upon server startup, the routing mechanism is invoked. If a requested route doesn't match any predefined routes, a "NOT_FOUND" response is generated.
+- **Readability Focus:** The project is structured to enhance code readability. Logic is divided into distinct segments such as routes, controllers, and utility functions, contributing to a clear and organized codebase.
+- **Routing Mechanism:** Upon server startup, the routing mechanism is invoked. If a requested route doesn't match any predefined routes, a "NOT_FOUND" response is generated.
 - /organOrders Route: This route is designed to process incoming organ orders.
-- Controller organOrderController: This controller is responsible for managing incoming requests related to order processing. It validates request methods and CSV data, ensuring error handling.
-- CSV Parsing: I avoid using third-party library by implementing a custom CSV-to-JSON parser. The parseCSVToJson utility function takes care of this task.
-- Order Calculation: The calculateOrgans function calculates orders based on received data. For each order detail, it computes the purchased ratio and calls the generateOrder(organ, purchasedRatio) to format the order in the required format.
-- Response Handling: The sendResponse utility function is developed to send responses from the API.
-- Unit Test Coverage: Each utility function and the main controller are tested using unit tests and the test is employed in separate folders.
+- **Controller organOrderController:** This controller is responsible for managing incoming requests related to order processing. It validates request methods and CSV data, ensuring error handling.
+- **CSV Parsing:** I avoid using third-party library by implementing a custom CSV-to-JSON parser. The parseCSVToJson utility function takes care of this task.
+- **Order Calculation:** The calculateOrgans function calculates orders based on received data. For each order detail, it computes the purchased ratio and calls the generateOrder(organ, purchasedRatio) to format the order in the required format.
+- **Response Handling:** The sendResponse utility function is developed to send responses from the API.
+- **Unit Test Coverage:** Each utility function and the main controller are tested using unit tests and the test is employed in separate folders.
