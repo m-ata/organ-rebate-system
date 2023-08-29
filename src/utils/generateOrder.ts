@@ -18,7 +18,7 @@ const lungBonus = (purchasedRatio: number) =>
  * @param purchasedOrgan The organ being purchased
  * @param purchasedRatio The purchase ratio of the main purchased organ
  * @returns The order string in the required format
-*/
+ */
 export const generateOrder = (
   purchasedOrgan: string,
   purchasedRatio: number,

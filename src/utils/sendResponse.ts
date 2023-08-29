@@ -7,7 +7,7 @@ import { HttpStatusCode } from '../enum/httpStatus';
  * @param data response data as string to send in the response body.
  * @param statusCode HTTP status code to set in the response.
  * @param headers headers to include in the response.
-*/
+ */
 export const sendResponse = (
   response: ServerResponse,
   data: string,

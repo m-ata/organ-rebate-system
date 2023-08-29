@@ -3,13 +3,16 @@ import { organOrderController } from '../../../src/controllers/organOrderControl
 import * as parseCsvModule from '../../../src/utils/parseCsvToJson';
 import * as calculateOrgansModule from '../../../src/utils/calculateOrgans';
 import * as sendResponseModule from '../../../src/utils/sendResponse';
-import { HttpStatusCode, HttpStatusMessage, ResponseMessage } from '../../../src/enum/httpStatus';
+import {
+  HttpStatusCode,
+  HttpStatusMessage,
+  ResponseMessage,
+} from '../../../src/enum/httpStatus';
 import { RESPONSE_HEADER } from '../../../src/constants';
 
 let parseCsvTOJsonSpy: jest.SpyInstance;
 let calculateOrganSpy: jest.SpyInstance;
 let sendResponseSpy: jest.SpyInstance;
-
 
 describe('organOrderController', () => {
   let mockReq: Partial<IncomingMessage>;
@@ -19,8 +22,8 @@ describe('organOrderController', () => {
     mockReq = { method: 'POST', on: jest.fn() };
     mockRes = { writeHead: jest.fn(), end: jest.fn() };
     parseCsvTOJsonSpy = jest.spyOn(parseCsvModule, 'parseCSVToJson');
-    calculateOrganSpy =  jest.spyOn(calculateOrgansModule, 'calculateOrgans');
-    sendResponseSpy = jest.spyOn(sendResponseModule, 'sendResponse');;
+    calculateOrganSpy = jest.spyOn(calculateOrgansModule, 'calculateOrgans');
+    sendResponseSpy = jest.spyOn(sendResponseModule, 'sendResponse');
   });
 
   afterEach(() => {
@@ -68,14 +71,14 @@ describe('organOrderController', () => {
 
     await organOrderController(
       mockReq as IncomingMessage,
-      mockRes as ServerResponse
+      mockRes as ServerResponse,
     );
 
     expect(sendResponseSpy).toHaveBeenCalledWith(
       mockRes,
       `Error: ${HttpStatusMessage.BAD_REQUEST} : ${ResponseMessage.WRONG_METHOD_TYPE}`,
       HttpStatusCode.BAD_REQUEST,
-      RESPONSE_HEADER
+      RESPONSE_HEADER,
     );
   });
 });
