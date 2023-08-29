@@ -23,7 +23,7 @@
     "rootDirs": ["src"],
     "baseUrl": ".",
     "paths": {
-      "*": ["node_modules/*"]
+      "*": ["*"]
     }
   },
   "exclude": ["dist", "node_modules"],
