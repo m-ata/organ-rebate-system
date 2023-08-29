@@ -1,9 +1,9 @@
 import { IncomingMessage, ServerResponse } from 'http';
-import { organOrderController } from '../../../src/controllers/organOrder';
+import { organOrderController } from '../../../src/controllers/organOrderController';
 import * as parseCsvModule from '../../../src/utils/parseCsvToJson';
 import * as calculateOrgansModule from '../../../src/utils/calculateOrgans';
 import * as sendResponseModule from '../../../src/utils/sendResponse';
-import { HttpStatusCode, HttpStatusMessage } from '../../../src/enum/httpStatus';
+import { HttpStatusCode, HttpStatusMessage, ResponseMessage } from '../../../src/enum/httpStatus';
 import { RESPONSE_HEADER } from '../../../src/constants';
 
 let parseCsvTOJsonSpy: jest.SpyInstance;
@@ -73,7 +73,7 @@ describe('organOrderController', () => {
 
     expect(sendResponseSpy).toHaveBeenCalledWith(
       mockRes,
-      HttpStatusMessage.BAD_REQUEST,
+      `Error: ${HttpStatusMessage.BAD_REQUEST} : ${ResponseMessage.WRONG_METHOD_TYPE}`,
       HttpStatusCode.BAD_REQUEST,
       RESPONSE_HEADER
     );
