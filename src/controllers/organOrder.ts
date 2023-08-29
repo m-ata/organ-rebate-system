@@ -19,7 +19,7 @@ export const organOrderController = async (
       data += chunk;
     });
 
-    req.on('end', async () => {
+    req.on('end', () => {
       try {
         const orders: OrganOrder[] = parseCSVToJson(data);
         const formattedOrders: string = orders
